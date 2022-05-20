@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+
 * {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -12,7 +13,6 @@
   transition: 0.2s linear;
 }
 
-/* SASS Variables */
 $green: #27ae60;
 $black: #130f40;
 $white: #fff;
@@ -38,12 +38,15 @@ html {
   overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: 8.5rem;
+
   &::-webkit-scrollbar {
     width: 1rem;
   }
+
   &::-webkit-scrollbar-track {
     background: $white;
   }
+
   &::-webkit-scrollbar-thumb {
     background: $green;
     border-radius: 5rem;
@@ -57,9 +60,11 @@ section {
 .heading {
   text-align: center;
   padding-bottom: 2rem;
+
   span {
     @include font(3rem);
   }
+
   h3 {
     font-size: 3rem;
     color: $black;
@@ -75,6 +80,7 @@ section {
   color: $white;
   background: $green;
   border-radius: 0.5rem;
+
   &:hover {
     background: $black;
   }
@@ -97,6 +103,11 @@ section {
     font-size: 2.5rem;
     font-weight: bolder;
     color: $black;
+
+    i {
+      padding-right: 0.5rem;
+      color: $green;
+    }
   }
 
   .navbar {
@@ -112,9 +123,9 @@ section {
   }
 
   .icons div {
-    height: 4rem;
-    width: 4rem;
-    line-height: 4rem;
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
     font-size: 2rem;
     background: $light-bg;
     color: $black;
@@ -157,7 +168,7 @@ section {
 
   form {
     height: 7rem;
-    border-bottom: 0.1rem solid $black;
+    border-bottom: 0.2rem solid $black;
     width: 100%;
     display: flex;
     align-items: center;
@@ -173,7 +184,7 @@ section {
     }
 
     label {
-      font-size: 2rem;
+      font-size: 3rem;
       cursor: pointer;
       color: $black;
 
@@ -305,6 +316,85 @@ section {
     }
   }
 }
+
+.login-form-container {
+  position: fixed;
+  top: 8.5rem;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: calc(100vh - 8.5rem);
+  background: $white;
+  padding: 0 2rem;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  form {
+    margin: 2rem auto;
+    max-width: 40rem;
+    box-shadow: $box-shadow;
+    border: $border;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    animation: fadeUp 0.4s linear;
+
+    h3 {
+      padding-bottom: 1rem;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      color: $black;
+    }
+
+    .box {
+      margin: 0.7rem 0;
+      border-radius: 0.5rem;
+      background: $light-bg;
+      padding: 1rem 1.2rem;
+      font-size: 1.6rem;
+      color: $black;
+      text-transform: none;
+      width: 100%;
+    }
+
+    .remember {
+      padding: 1rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      label {
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: $light-color;
+      }
+    }
+
+    .btn {
+      margin: 1rem 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    p {
+      padding-top: 1rem;
+      font-size: 1.5rem;
+      color: $light-color;
+
+      a {
+        color: $green;
+
+        &:hover {
+          color: $black;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
 .home {
   display: flex;
   align-items: center;
@@ -363,7 +453,6 @@ section {
     padding: 2rem;
     text-align: center;
     border-radius: 0.5rem;
-    border-radius: 0.5rem;
     background: $light-bg;
 
     &:hover {
@@ -379,7 +468,7 @@ section {
     }
 
     h3 {
-      font-size: 1.7rem;
+      font-size: 1.8rem;
       color: $black;
     }
   }
@@ -387,7 +476,7 @@ section {
 
 .about {
   display: flex;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
   align-items: center;
   gap: 2rem;
   background: $light-bg;
@@ -428,7 +517,7 @@ section {
 
       .icons {
         flex: 1 1 20rem;
-        box-sizing: 0.5rem;
+        border-radius: 0.5rem;
         background: $white;
         box-shadow: $box-shadow;
         display: flex;
@@ -594,7 +683,7 @@ section {
 }
 
 .menu .box-container {
-  @include grid(40rem);
+  @include grid(35rem);
 
   .box {
     border-radius: 0.5rem;
@@ -906,7 +995,6 @@ section {
   }
 }
 
-/* Media Queries */
 @media (max-width: 991px) {
   html {
     font-size: 55%;
